@@ -1,0 +1,253 @@
+/* Resetando margens e padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Cabeçalho */
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #002244;
+    padding: 30px;
+    color: white;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header .logo {
+    width: 120px;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+header .logo-escrita {
+    width: 250px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+/* Menu */
+.menu-container {
+    width: 100%;
+    background-color: #002244;
+    text-align: center;
+}
+
+/* Menu normal em telas grandes */
+nav {
+    display: flex;
+    justify-content: center;
+    background: #002244;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 10px 20px;
+}
+
+nav ul li a {
+    color: #FFD700;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 8px 15px;
+    border-radius: 8px;
+    display: block;
+    transition: all 0.3s ease-in-out;
+}
+
+nav ul li a:hover {
+    background-color: #FFD700;
+    color: #002244;
+    text-decoration: none;
+    transform: scale(1.1); /* Efeito de zoom no hover */
+}
+
+/* Menu hambúrguer para telas menores */
+.menu-toggle {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+/* Estilos principais da página */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column; /* Cabeçalho no topo e conteúdo abaixo */
+    justify-content: flex-start;
+    padding: 0;
+    margin-top: 0; /* Remover qualquer margem indesejada no body */
+}
+
+/* Contêiner para os cards */
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Estilo do card */
+.card {
+    background-color:#002244;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    text-align: center;
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 15px;
+}
+
+.card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #ffcc00;
+    text-align: center;
+}
+
+.card p {
+    font-size: 1rem;
+    color: #ffcc00;
+    text-align: center;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* Altere a cor dos links dentro dos cards para branco */
+.card a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600; /* Mantém o texto mais marcante */
+}
+
+/* Altere a cor do hover dos links dentro dos cards */
+.card a:hover {
+    color: #FFD700;
+    background-color: transparent;
+}
+
+/* Rodapé */
+footer {
+    background-color: #002244;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    width: 100%;
+    bottom: 0;
+    margin-top: 40px;
+}
+
+.saiba-mais-btn {
+    display: block;
+    width: 200px;
+    margin: 20px auto;
+    padding: 10px 15px;
+    background-color: #ffcc00;
+    color: black;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    text-decoration: none;
+}
+
+/* Alterar a aparência do link do rodapé */
+footer .saiba-mais-btn {
+    color:#002244; /* Torna o texto branco */
+    font-size: 16px; /* Ajuste o tamanho do texto */
+    text-decoration: none;
+}
+
+/* Substituindo o botão do rodapé por um link em texto simples */
+footer .saiba-mais-btn:hover {
+    color:#f4f4f9;
+    text-decoration: underline; /* Adiciona sublinhado ao passar o mouse */
+}
+
+/* Responsividade - Ajustes para telas menores */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+    nav {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    nav.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+        background: #002244;
+    }
+
+    nav ul {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    nav ul li {
+        text-align: center;
+        margin: 0;
+        border-bottom: 1px solid #FFD700;
+    }
+
+    nav ul li a {
+        display: block;
+        padding: 15px;
+    }
+    .card img {
+        height: 150px;
+    }
+
+    .card h3 {
+        font-size: 1.3rem;
+    }
+
+    .card p {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .card {
+        padding: 10px;
+    }
+
+    .card h3 {
+        font-size: 1.2rem;
+    }
+
+    .card p {
+        font-size: 0.85rem;
+    }
+}
